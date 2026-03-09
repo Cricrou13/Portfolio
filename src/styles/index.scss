@@ -1,0 +1,149 @@
+@import "./variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg-dark;
+  color: $text-main;
+  font-family: $font-main;
+  line-height: 1.6;
+}
+
+// Conteneur global
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Section Hero (Votre présentation)
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, $primary, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    color: $text-muted;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+ .badge {
+  display: inline-block;
+  background-color: rgba($primary, 0.15); // Un peu plus opaque
+  color: $primary-light; // Utilisez le bleu plus clair
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba($primary, 0.4); // Bordure plus visible
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+}
+
+button, .btn {
+  background-color: $primary;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: $border-radius;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: $transition;
+  margin-top: 20px;
+
+  &:hover {
+    background-color: $primary-light;
+    transform: scale(1.05); // Petit effet de zoom au survol
+    box-shadow: 0 0 20px rgba($primary, 0.4); // Effet de halo "lumineux"
+  }
+}
+
+// Grille de projets
+.projects {
+    padding: $space-l 0;
+    margin-top: -5vh;
+  
+  h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .card {
+    background: $bg-card;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba($text-muted, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary;
+    }
+
+    h4 { margin-bottom: 10px; font-size: 1.4rem; }
+    p { color: $text-muted; margin-bottom: 20px; }
+    .tags {
+       display: flex;
+       gap: 10px;
+       font-size: 0.8rem;
+       color: $primary;
+    }
+  }
+}
+
+.contact {
+  text-align: center;
+  padding: $space-l 0;
+  
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+}
+
+.btn--outline {
+  background: transparent;
+  border: 1px solid $primary;
+  color: $primary;
+  text-decoration: none;
+  &:hover {
+    background: $primary;
+    color: white;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: $text-muted;
+  border-top: 1px solid rgba($text-muted, 0.1);
+}
