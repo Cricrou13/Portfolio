@@ -1,0 +1,45 @@
+@use"../settings/variables" as v;
+// Navbar
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background-color: rgba(v.$bg-dark, 0.95);
+  backdrop-filter: blur(10px);
+
+   .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 80px;
+  }
+
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    span { color: v.$primary; }
+    padding: 0 80px;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    a {
+      text-decoration: none;
+      color: v.$text-muted;
+      font-size: 0.9rem;
+      transition: 0.3s;
+      &:hover { color: white; }
+    }
+  }
+}

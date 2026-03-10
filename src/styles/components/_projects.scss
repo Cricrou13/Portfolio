@@ -1,0 +1,42 @@
+@use"../settings/variables" as v;
+.projects {
+  background-color: v.$bg-dark; // Assure-toi que le fond reste sombre ici aussi
+  padding: 100px 0;
+  color: white;
+
+  h2 {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .card {
+    background-color: #1e293b; // Bleu ardoise (couleur de carte)
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+    text-align: left;
+    transition: 0.3s ease;
+
+    h3 { color: v.$primary; font-size: 1.4rem; margin-bottom: 1rem; }
+    p { color: #94a3b8; font-size: 0.9rem; line-height: 1.5; }
+    
+    .tags {
+      margin-top: 1.5rem;
+      color: v.$primary-light;
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+      border-color: v.$primary;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+  }
+}

@@ -29,3 +29,13 @@ $font-main: 'Inter', system-ui, -apple-system, sans-serif;
 $border-radius: 12px;
 $transition: all 0.3s ease;
 $shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+// Polices
+$font-main: 'Inter', sans-serif;
+
+// Tailles de texte (Échelle modulaire)
+$font-size-xs: 0.85rem;
+$font-size-sm: 1rem;
+$font-size-md: 1.25rem;
+$font-size-lg: 2rem;
+$font-size-xl: 4rem; // Ton gros titre DELCLOS
