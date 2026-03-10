@@ -20,14 +20,36 @@
     align-items: center;
     width: 100%;
     gap: 80px;
+    max-width: 100%;
   }
 
 
   .logo {
-    font-size: 1.5rem;
+    font-family: v.$font-logo;
+    font-size: 2.2rem;
     font-weight: 900;
-    span { color: v.$primary; }
-    padding: 0 80px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    letter-spacing: -5px;
+    gap: 2px;
+  }
+
+   .first-letter { 
+    position: relative;    
+    z-index: 2;
+    font-size: 30px;
+    padding-left: 100px;
+  }
+
+   .second-letter {
+    color: v.$primary-light; 
+    position: relative;
+    z-index: 1;
+    margin-left: -2px;   
+    text-shadow: -2px 0px 5px rgba(v.$bg-dark, 0.5); 
+    font-size: 25px;
   }
 
   .nav-links {

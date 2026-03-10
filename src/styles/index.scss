@@ -2,7 +2,6 @@
 @use"./settings/variables" as v;;
 
 // 2. La base (Reset et réglages globaux)
-@use "./base/reset";
 @use "./base/typography";
 
 // 3. Les composants (Le look de chaque partie)
@@ -10,6 +9,9 @@
 @use "./components/hero";
 @use "./components/projects";
 @use "./components/contact";
+@use "./components/about";
+@use "./components/expertise";
+@use "./components/footer";
 
 
 // 1. BASE (On s'assure que le fond est noir)
@@ -25,6 +27,8 @@ body {
   font-family: v.$font-main;
   overflow-x: hidden;
   padding: 0 24px;
+  display: flex;
+  justify-content: center;
 }
 
 
