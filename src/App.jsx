@@ -1,6 +1,8 @@
 import React from 'react';
 import './styles/index.scss';
 import profilePic from './assets/photo-christophe.jpeg';
+import { projectData } from './data/projectData';
+import ProjectCard from './styles/components/ProjectCard';
 
 function App() {
   return (
@@ -144,23 +146,11 @@ function App() {
       {/* --- PROJETS ET CONTACT --- */}
       <main className="container">
         <section id="projects" className="projects">
-          <h2>Mes Projets <span className='accent'> OpenClassrooms</span></h2>
+          <h2>Mes<span className='accent'>Projets</span></h2>
           <div className="project-grid">
-            <div className="card">
-              <h3>Kasa</h3>
-              <p>Application de location immobilière avec React et React Router. Gestion du design responsive.</p>
-              <div className="tags"><span>#React</span><span>#Sass</span></div>
-            </div>
-            <div className="card">
-              <h3>Mon Vieux Grimoire</h3>
-              <p>Développement du Back-End : API REST sécurisée avec Node.js, Express et MongoDB.</p>
-              <div className="tags"><span>#Node.js</span><span>#MongoDB</span></div>
-            </div>
-            <div className="card">
-              <h3>Portfolio Pro</h3>
-              <p>Conception et déploiement de mon portfolio professionnel utilisant Vite, React et Sass.</p>
-              <div className="tags"><span>#Vite</span><span>#React</span><span>#Sass</span></div>
-            </div>
+            {projectData.map((item) => (
+              <ProjectCard key={item.id} project={item} />
+            ))}
           </div>
         </section>
 

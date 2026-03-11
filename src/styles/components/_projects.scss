@@ -10,10 +10,12 @@
     display: flex;
     justify-content: center;
     gap: 15px;
-    
+    color: white;
+
     .accent {
-      color: v.$primary;
+       color: v.$primary;
     }
+
   }
 
   .project-grid {

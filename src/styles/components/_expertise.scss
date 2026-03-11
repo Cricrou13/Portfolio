@@ -2,7 +2,11 @@
 
 .expertise {
   padding: 100px 0;
-  background-color: rgba(0, 0, 0, 0.2); // Fond légèrement plus sombre pour trancher
+  background-color: rgba(0, 0, 0, 0.2);
+ 
+    .container {
+        margin: 0 25px;
+    }
 
   .section-header {
     text-align: center;
