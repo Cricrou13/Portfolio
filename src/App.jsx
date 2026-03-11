@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import './styles/index.scss';
 import profilePic from './assets/photo-christophe.jpeg';
 import { projectData } from './data/projectData';
-import ProjectCard from './styles/components/ProjectCard';
+import ProjectCard from './styles/ProjectCard';
+
 
 function App() {
+
+  const [showButton, setShowButton] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > 1000) {
+      setShowButton(true); // On montre le bouton après 300px de descente
+    } else {
+      setShowButton(false);
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Remontée fluide
+  });
+};
+
   return (
     <div className="App">
       {/* --- NAVBAR --- */}
@@ -207,6 +231,13 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {/* Bouton de remontée */}
+      {showButton && (
+        <button className="scroll-to-top" onClick={scrollToTop} title="Remonter">
+          <i className="fa-solid fa-arrow-up"></i>
+        </button>
+      )}
     </div>
   );
 }
