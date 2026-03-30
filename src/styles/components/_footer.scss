@@ -22,6 +22,7 @@ footer {
     .footer-socials {
       display: flex;
       gap: 30px;
+      justify-content: space-evenly;
       
       a {
         color: v.$text-muted;
@@ -39,6 +40,12 @@ footer {
       color: v.$text-muted;
       font-size: 0.85rem;
       letter-spacing: 0.5px;
+      display: flex;
+      justify-content: center;
+    }
+    .p {
+      display: flex;
+      justify-content: center;
     }
   }
 }
