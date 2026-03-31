@@ -27,18 +27,21 @@ body {
   color: v.$text-main;
   font-family: v.$font-main;
   overflow-x: hidden;
-  padding: 0 24px;
+  width: 100%;
+  margin: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   line-height: 1.6;
 }
 
 
 // Mise en page globale
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 20px;
 }
 
 
@@ -73,7 +76,7 @@ body {
       margin: 0 auto;
     }
     h1 { 
-      font-size: 3rem; 
+      font-size: 2rem; 
     }
   }
 }

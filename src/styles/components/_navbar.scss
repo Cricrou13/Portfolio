@@ -19,14 +19,18 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    gap: 80px;
+    gap: 20px;
     max-width: 100%;
+
+    @media (min-width: 768px) {
+      gap: 80px;
+    }
   }
 
 
   .logo {
     font-family: v.$font-logo;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 900;
     font-style: italic;
     display: flex;
@@ -34,13 +38,17 @@
     cursor: pointer;
     letter-spacing: -5px;
     gap: 2px;
+
+    @media (min-width:768px) {
+      font-size: 2.2rem;
+      letter-spacing: -5px;
+    }
   }
 
    .first-letter { 
     position: relative;    
     z-index: 2;
     font-size: 30px;
-    padding-left: 100px;
   }
 
    .second-letter {
@@ -55,10 +63,22 @@
   .nav-links {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 15px;
+
+    @media (min-width: 768px) {
+      gap: 30px;
+    }
+
+    @media (min-width: 400px) {
+      gap: 10px;
+      a {
+        font-size: 0.8rem;
+      }
+    }
     a {
       text-decoration: none;
       color: v.$text-muted;
+      white-space: nowrap;
       font-size: 0.9rem;
       transition: 0.3s;
       &:hover { color: white; }
