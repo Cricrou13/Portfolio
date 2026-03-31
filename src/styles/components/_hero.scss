@@ -1,19 +1,37 @@
-@use"../settings/variables" as v;
-// Hero Section
+@use "../settings/variables" as v;
+
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 85vh;
   position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 
-  // Partie gauche : Texte
+  // --- PASSAGE EN MODE MOBILE ---
+  @media (max-width: 992px) {
+    flex-direction: column-reverse; // L'image passe au dessus du texte
+    justify-content: center;
+    text-align: center;
+    padding-top: 120px; // Espace pour la navbar
+    gap: 40px;
+  }
+
   .hero-left {
-    /* flex: 1; */
-    text-align: left;
-    padding-top: 100px;
     z-index: 2;
-    margin: 80px;
+    // On remplace le margin: 80px par quelque chose de flexible
+    margin: 0; 
+    text-align: left;
+
+    @media (max-width: 992px) {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     .badge-tech {
       display: inline-flex;
@@ -29,11 +47,21 @@
     }
 
     h1 {
-      font-size: 4rem;
+      font-size: 4rem; // Taille ordi
       font-weight: 800;
       line-height: 1.1;
       margin-bottom: 30px;
       font-family: v.$font-main;
+
+      // RÉDUCTION POUR MOBILE
+      @media (max-width: 768px) {
+        font-size: 2.5rem; 
+      }
+      @media (max-width: 480px) {
+        font-size: 2rem;
+        word-break: break-word;
+      }
+
       .accent {
         color: v.$primary; 
       }
@@ -44,57 +72,70 @@
       color: v.$text-muted;
       max-width: 500px;
       margin-bottom: 40px;
+
+      @media (max-width: 992px) {
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
 
     .hero-buttons {
       display: flex;
       gap: 20px;
+
+      @media (max-width: 480px) {
+        flex-direction: column; // Empile les boutons sur petit mobile
+        width: 100%;
+        gap: 15px;
+      }
       
-      .btn-primary {
-        background: v.$primary;
-        color: white;
+      .btn-primary, .btn-outline {
         padding: 15px 30px;
         border-radius: 12px;
         text-decoration: none;
         font-weight: 600;
         display: flex;
         align-items: center;
+        justify-content: center; // Centre le texte dans le bouton
         gap: 10px;
         transition: 0.3s;
+      }
+
+      .btn-primary {
+        background: v.$primary;
+        color: white;
         &:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(v.$primary, 0.3); }
       }
 
       .btn-outline {
         border: 1px solid rgba(255, 255, 255, 0.1);
         color: white;
-        padding: 15px 30px;
-        border-radius: 12px;
-        text-decoration: none;
-        transition: 0.3s;
-        display: flex;
-        align-items: center;
-        gap: 10px;
         &:hover { background: rgba(255, 255, 255, 0.05); }
       }
     }
   }
 
-  // Partie droite : Image 
   .hero-image {
-    flex: 1;
     display: flex;
     justify-content: flex-end;
     z-index: 2;
+
+    @media (max-width: 992px) {
+      justify-content: center;
+      width: 100%;
+    }
 
     .image-wrapper {
       position: relative;
       width: 280px;
       height: 280px;
+      // Sécurité pour les tout petits écrans
+      max-width: 70vw; 
+      max-height: 70vw;
+
       border-radius: 50%;
       padding: 10px;
       border: 2px solid rgba(v.$primary, 0.5);
-      
-      // L'effet de halo lumineux (le glow bleu)
       box-shadow: 0 0 60px rgba(v.$primary, 0.4);
 
       img {
@@ -105,16 +146,15 @@
         filter: grayscale(20%); 
       }
     }
-     // Petite flèche en bas
+  }
+
   .scroll-indicator {
     position: absolute;
-    bottom: 40px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 2rem;
     color: v.$text-muted;
-    animation: bounce 2s infinite;
     z-index: 10;
-    cursor: default;
   }
-}}
+}
