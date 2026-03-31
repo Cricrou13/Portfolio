@@ -1,5 +1,21 @@
-@import "./variables";
+// 1. Les variables (Toujours en premier car les autres en ont besoin)
+@use"./settings/variables" as v;
 
+// 2. La base (Reset et réglages globaux)
+@use "./base/typography";
+
+// 3. Les composants (Le look de chaque partie)
+@use "./components/navbar";
+@use "./components/hero";
+@use "./components/projects";
+@use "./components/contact";
+@use "./components/about";
+@use "./components/expertise";
+@use "./components/footer";
+@use "./components/scroller-top";
+
+
+// 1. BASE (On s'assure que le fond est noir)
 * {
   margin: 0;
   padding: 0;
@@ -7,143 +23,60 @@
 }
 
 body {
-  background-color: $bg-dark;
-  color: $text-main;
-  font-family: $font-main;
+  background-color: v.$bg-dark;
+  color: v.$text-main;
+  font-family: v.$font-main;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   line-height: 1.6;
 }
 
-// Conteneur global
+
+// Mise en page globale
 .container {
-  max-width: 1100px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-// Section Hero (Votre présentation)
-.hero {
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 
-  h1 {
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(to right, $primary, #60a5fa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-    color: $text-muted;
-    font-weight: 400;
-    margin-bottom: 2rem;
-  }
-
- .badge {
-  display: inline-block;
-  background-color: rgba($primary, 0.15); // Un peu plus opaque
-  color: $primary-light; // Utilisez le bleu plus clair
-  padding: 8px 20px;
-  border-radius: 100px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border: 1px solid rgba($primary, 0.4); // Bordure plus visible
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-}
-
-button, .btn {
-  background-color: $primary;
-  color: white;
-  border: none;
-  padding: 12px 28px;
-  border-radius: $border-radius;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: $transition;
-  margin-top: 20px;
-
-  &:hover {
-    background-color: $primary-light;
-    transform: scale(1.05); // Petit effet de zoom au survol
-    box-shadow: 0 0 20px rgba($primary, 0.4); // Effet de halo "lumineux"
+// Adaptabilité Mobile
+@media (max-width: 768px) {
+  .contact .contact-form .form-row {
+    grid-template-columns: 1fr; // On passe sur une seule colonne sur téléphone
   }
 }
 
-// Grille de projets
-.projects {
-    padding: $space-l 0;
-    margin-top: -5vh;
-  
-  h3 {
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+  40% {transform: translateY(-10px) translateX(-50%);}
+  60% {transform: translateY(-5px) translateX(-50%);}
+}
+
+// Responsive : sur mobile, on empile les colonnes
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column-reverse;
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 50px;
-  }
-
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-  }
-
-  .card {
-    background: $bg-card;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid rgba($text-muted, 0.1);
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-      border-color: $primary;
+    padding-top: 50px;
+    .hero-content .description { 
+      margin: 0 auto 40px; 
     }
-
-    h4 { margin-bottom: 10px; font-size: 1.4rem; }
-    p { color: $text-muted; margin-bottom: 20px; }
-    .tags {
-       display: flex;
-       gap: 10px;
-       font-size: 0.8rem;
-       color: $primary;
+    .hero-buttons { 
+      justify-content: center; 
+    }
+    .hero-image .image-wrapper { 
+      width: 300px; 
+      height: 300px; 
+      margin: 0 auto;
+    }
+    h1 { 
+      font-size: 2rem; 
     }
   }
-}
-
-.contact {
-  text-align: center;
-  padding: $space-l 0;
-  
-  .contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-}
-
-.btn--outline {
-  background: transparent;
-  border: 1px solid $primary;
-  color: $primary;
-  text-decoration: none;
-  &:hover {
-    background: $primary;
-    color: white;
-  }
-}
-
-footer {
-  text-align: center;
-  padding: 40px;
-  color: $text-muted;
-  border-top: 1px solid rgba($text-muted, 0.1);
 }

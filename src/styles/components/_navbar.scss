@@ -1,0 +1,87 @@
+@use"../settings/variables" as v;
+// Navbar
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background-color: rgba(v.$bg-dark, 0.95);
+  backdrop-filter: blur(10px);
+
+   .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    max-width: 100%;
+
+    @media (min-width: 768px) {
+      gap: 80px;
+    }
+  }
+
+
+  .logo {
+    font-family: v.$font-logo;
+    font-size: 1.8rem;
+    font-weight: 900;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    letter-spacing: -5px;
+    gap: 2px;
+
+    @media (min-width:768px) {
+      font-size: 2.2rem;
+      letter-spacing: -5px;
+    }
+  }
+
+   .first-letter { 
+    position: relative;    
+    z-index: 2;
+    font-size: 30px;
+  }
+
+   .second-letter {
+    color: v.$primary-light; 
+    position: relative;
+    z-index: 1;
+    margin-left: -2px;   
+    text-shadow: -2px 0px 5px rgba(v.$bg-dark, 0.5); 
+    font-size: 25px;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+
+    @media (min-width: 768px) {
+      gap: 30px;
+    }
+
+    @media (min-width: 400px) {
+      gap: 10px;
+      a {
+        font-size: 0.8rem;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: v.$text-muted;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      transition: 0.3s;
+      &:hover { color: white; }
+    }
+  }
+}

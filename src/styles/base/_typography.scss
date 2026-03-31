@@ -1,0 +1,27 @@
+@use"../settings/variables" as v;
+body {
+  font-family: v.$font-main;
+  font-size: v.$font-size-sm;
+  line-height: 1.6; // Pour que le texte "respire"
+  color: v.$text-main;
+  -webkit-font-smoothing: antialiased; // Rend la police plus fine sur Mac/iPhone
+}
+
+h1, h2, h3, h4 {
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: v.$space-s;
+}
+
+// Style pour les liens de la navbar par exemple
+a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: v.$transition;
+}
+
+// Paragraphes
+p {
+  margin-bottom: v.$space-s;
+  color: v.$text-muted;
+}

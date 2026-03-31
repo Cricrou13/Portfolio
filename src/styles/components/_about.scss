@@ -1,0 +1,93 @@
+@use"../settings/variables" as v;
+
+.about {
+  padding: 100px 0;
+  
+  .about-grid {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .about-text {
+    flex: 1.2;
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+      .accent { color: v.$primary; }
+    }
+
+    p {
+      color: v.$text-muted;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      strong { color: white; }
+    }
+
+    .about-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+
+      .highlight-item {
+        background: rgba(v.$primary, 0.1);
+        color: v.$primary-light;
+        padding: 8px 15px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        i { margin-right: 8px; }
+      }
+    }
+  }
+
+  .about-stats {
+    flex: 0.8;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    .stat-card {
+      background: v.$bg-card;
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: center;
+      transition: v.$transition;
+
+      h3 {
+        font-size: 2.5rem;
+        color: white;
+        margin-bottom: 5px;
+      }
+
+      p {
+        color: v.$text-muted;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      &:hover {
+        border-color: v.$primary;
+        transform: scale(1.05);
+      }
+
+      &.accent-card {
+        background: linear-gradient(135deg, v.$primary-dark, v.$bg-card);
+        border: none;
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 992px) {
+  .about .about-grid {
+    flex-direction: column;
+    text-align: center;
+    .about-text .about-highlights { justify-content: center; }
+  }
+}
