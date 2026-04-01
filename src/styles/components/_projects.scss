@@ -1,7 +1,4 @@
 @use"../settings/variables" as v;
-* {
-  outline: 2px solid red !important;
-}
 
 .projects {
   background-color: v.$bg-dark; // Assure-toi que le fond reste sombre ici aussi
