@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
     return (
-         <header id="home" className="hero container">
+         <header id="accueil" className="hero container">
         <div className="hero-left">
           <div className="badge-tech">
             <span className="icon">💎</span> • Développeur Full-Stack •
