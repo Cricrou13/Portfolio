@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+// eslint-disable-next-line no-unused-vars
+import { motion, AnimatePresence } from 'framer-motion';
+// Vérifie bien le nom de ton fichier SCSS ci-dessous
+import '../styles/components/_scroller-top.scss'; 
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,7 +21,8 @@ const ScrollToTop = () => {
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
-  const scrollToTop = () => {
+
+  const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -25,18 +30,23 @@ const ScrollToTop = () => {
   };
 
   return (
-    <>
+    <AnimatePresence>
       {isVisible && (
-        <button 
+        <motion.button 
           className="scroll-to-top" 
-          onClick={scrollToTop}
+          onClick={handleScrollToTop}
           aria-label="Remonter en haut de la page"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.5 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
           <i className="fa-solid fa-arrow-up"></i>
-        </button>
+        </motion.button>
       )}
-    </>
+    </AnimatePresence>
   );
-};
+}; // Cette accolade ferme ENFIN le composant à la toute fin
 
 export default ScrollToTop;
