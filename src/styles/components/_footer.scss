@@ -1,62 +1,66 @@
-@use"../settings/variables" as v;
+@use "../settings/variables" as v;
 
-footer {
-  padding: 50px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+.footer {
+  width: 100%;
+  padding: 15px 0; 
+  border-top: 1px solid rgba(255, 255, 255, 0.05); 
   background-color: v.$bg-dark;
+  margin-top: auto; 
+  display: flex;
+  justify-content: center;
 
   .footer-content {
     display: flex;
-    justify-content: space-between; 
-    align-items: center;
+    justify-content: space-between;
+    align-items: center; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 
+    /* BLOC LOGO (C.) */
     .footer-logo {
-      font-family: v.$font-logo;
-      font-size: 1.5rem;
-      font-weight: 900;
-      font-style: italic;
-      color: v.$primary;
-      span { color: v.$primary-light; }
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: v.$text-main;
+      span { color: v.$primary; } 
     }
 
+    /* BLOC ICÔNES */
     .footer-socials {
       display: flex;
-      gap: 30px;
-      justify-content: space-evenly;
+      gap: 20px;
       
       a {
-        color: v.$text-muted;
-        font-size: 1.2rem;
-        transition: v.$transition;
+        color: v.$primary; 
+        font-size: 1.1rem;
+        transition: transform 0.3s ease, color 0.3s ease;
 
         &:hover {
-          color: white;
+          color: v.$primary-light;
           transform: translateY(-3px);
         }
       }
     }
 
+    /* BLOC COPYRIGHT */
     .footer-copy {
-      color: v.$text-muted;
-      font-size: 0.85rem;
-      letter-spacing: 0.5px;
-      display: flex;
-      justify-content: center;
-    }
-    .p {
-      display: flex;
-      justify-content: center;
+      p {
+        color: v.$text-muted;
+        font-size: 0.85rem; 
+        margin: 0;
+        opacity: 0.8;
+      }
     }
   }
 }
 
-// Mobile : on empile les éléments sur téléphone
-@media (max-width: 768px) {
-  footer {
-    padding: 40px 0;
+/* Version Mobile */
+@media (max-width: v.$tablet) {
+  .footer {
     .footer-content {
       flex-direction: column;
-      gap: 30px;
+      gap: 15px;
       text-align: center;
     }
   }

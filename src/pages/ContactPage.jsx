@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Contact = () => {
+const ContactPage = () => {
     return (
-         <section id='contact' className='contact'>
+        <div className="page-content">
+            <section id='contact' className='contact'>
           <div className='contact-header'>
-            <h2>Me <span className="accent">Contacter</span></h2>
             <p>Un projet en tête ? Écrivez-moi, je réponds rapidement.</p>
             <div className='contact-email'>
                 <a href="mailto:delclos.c13@gmail.com">delclos.c13@gmail.com</a>
@@ -15,16 +15,16 @@ const Contact = () => {
           <form className='contact-form'>
             <div className='form-row'>
               <div className='form-group'>
-                <label for="name" className="sr-only">Votre nom</label>
+                <label htmlFor="name" className="sr-only">Votre nom</label>
                 <input type="text" id="name" name="name" placeholder="Votre nom" required />
               </div>
               <div className='form-group'>
-                <label for="email" className="sr-only">Votre e-mail</label>
+                <label htmlFor="email" className="sr-only">Votre e-mail</label>
                 <input type="email" id="email" name="email" placeholder="Votre email" required />
               </div>
             </div>
             <div className='form-group'>
-              <label for="message" className="sr-only">Votre nom</label>
+              <label htmlFor="message" className="sr-only">Votre nom</label>
               <textarea id="message" name="message" placeholder="Votre message..." rows="5" required></textarea>
             </div>
             <button type="submit" className="btn-submit">
@@ -32,6 +32,8 @@ const Contact = () => {
             </button>
           </form>
         </section>
-    )
-}
-export default Contact;
+        </div>
+    );
+};
+
+export default ContactPage;

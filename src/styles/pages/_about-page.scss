@@ -1,0 +1,128 @@
+@use '../settings/variables' as v;
+
+// 1. Remplacement de #about par .about (Nettoyage ID)
+.about {
+    padding: 5rem 1rem;
+
+    // 2. Mise en page en deux colonnes Desktop / une seule sur Mobile
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr; 
+        gap: 4rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .about-text {
+        h2.section-title {
+            margin-bottom: 2rem;
+            
+            .accent {
+                color: v.$primary;
+            }
+        }
+
+        p {
+            // 3. Utilisation de $text-muted pour ne pas fatiguer l'œil
+            color: v.$text-muted;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+
+            strong {
+                color: lighten(v.$primary, 15%); // Met en avant ta rigueur
+            }
+        }
+    }
+
+    .about-highlights {
+        display: flex;
+        flex-direction: column; // Liste verticale d'atouts
+        gap: 0.8rem;
+        margin-top: 2rem;
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: v.$primary;
+            font-weight: 500;
+
+            i {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .about-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .stat-card {
+            // 4. Rappel du style des projets avec $bg-card
+            background-color: v.$bg-card;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+
+            h3 {
+                font-size: 2.2rem;
+                color: v.$primary;
+                margin: 0;
+            }
+
+            p {
+                margin: 0.5rem 0 0;
+                color: v.$text-muted;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            // Variantes de cartes
+            &.accent-card {
+                border-color: v.$primary;
+                background-color: rgba(v.$primary, 0.05);
+            }
+
+            &:hover {
+                transform: translateY(-5px);
+                border-color: v.$primary;
+            }
+        }
+    }
+
+    // --- 5. LE RESPONSIVE (Vérification bords téléphone) ---
+    @media (max-width: v.$tablet) {
+        padding: 3rem 1.5rem;
+
+        .about-grid {
+            grid-template-columns: 1fr; // Une seule colonne sur mobile
+            gap: 3rem;
+        }
+
+        .about-text {
+            text-align: center;
+        }
+
+        .about-highlights {
+            align-items: center;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr; // Deux colonnes pour les stats sur tablette
+            gap: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .about-stats {
+            grid-template-columns: 1fr; // Retour à une colonne sur tout petit écran
+        }
+    }
+}

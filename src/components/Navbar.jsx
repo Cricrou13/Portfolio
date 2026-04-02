@@ -28,12 +28,12 @@ const Navbar = () => {
 
          {/* LES LIENS (Desktop constant / Mobile conditionnel) */}
         <ul className={`nav-links ${isOpen ? 'mobile-open' : ''}`}>
-          <li><a href="#accueil" onClick={closeMenu}>Accueil</a></li>
-          <li><a href="#about" onClick={closeMenu}>À propos</a></li>
-          <li><a href="#expertise" onClick={closeMenu}>Expertise</a></li>
-          <li><a href="#projects" onClick={closeMenu}>Projets</a></li>
+          <li><Link to="/" onClick={closeMenu}>Accueil</Link></li>
+          <li><Link to="/about" onClick={closeMenu}>À propos</Link></li>
+          <li><Link to="/expertise" onClick={closeMenu}>Expertise</Link></li>
+          <li><Link to="/projects" onClick={closeMenu}>Projets</Link></li>
           <li><Link to="/cv" onClick={closeMenu}>CV</Link></li>
-          <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+          <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
          
         </ul>
       </div>

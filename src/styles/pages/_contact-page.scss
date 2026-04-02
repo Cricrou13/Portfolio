@@ -1,0 +1,130 @@
+@use '../settings/variables' as v;
+
+.page-content {
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding-top: 150px;
+
+    h1 {
+        margin-bottom: 3rem;
+        color: v.$primary;
+    }
+}
+
+.contact {
+    width: 100%;
+    max-width: 800px; // Largeur max pour l'en-tête et le formulaire combinés
+    margin: 0 auto;
+
+    .contact-header {
+        text-align: center;
+        margin-bottom: 3rem;
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+
+            .accent {
+                color: v.$primary;
+            }
+        }
+
+        p {
+            color: v.$text-muted;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.8rem 1.5rem;
+            background-color: v.$bg-card;
+            border-radius: 50px;
+            
+            a {
+                color: v.$primary;
+                text-decoration: none;
+                font-weight: bold;
+                &:hover { text-decoration: underline; }
+            }
+
+            i { color: v.$text-muted; }
+        }
+    }
+
+    // --- LE FORMULAIRE (Le cœur de l'attention) ---
+    .contact-form {
+        max-width: 600px; // Astuce : Limite la largeur pour le confort visuel
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+
+            input, textarea {
+                width: 100%;
+                padding: 1rem;
+                background-color: v.$bg-card;
+                border: 1px solid rgba(v.$primary, 0.1);
+                border-radius: 8px;
+                color: white;
+                font-size: 1rem;
+                transition: border-color 0.3s ease;
+
+                &:focus {
+                    outline: none;
+                    border-color: v.$primary;
+                }
+
+                &::placeholder {
+                    color: rgba(v.$text-muted, 0.5);
+                }
+            }
+        }
+
+        .btn-submit {
+            background-color: v.$primary;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: transform 0.2s ease, background 0.3s ease;
+
+            &:hover {
+                background-color: lighten(v.$primary, 10%);
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    // --- VÉRIFICATION RESPONSIVE ---
+    @media (max-width: v.$tablet) {
+        .contact-form {
+            .form-row {
+                grid-template-columns: 1fr; // Nom et Email l'un sur l'autre sur mobile
+            }
+        }
+        
+        .contact-header h2 {
+            font-size: 1.8rem;
+        }
+    }
+}

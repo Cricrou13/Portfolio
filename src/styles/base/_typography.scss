@@ -1,10 +1,30 @@
 @use"../settings/variables" as v;
+
+.page-container {
+    padding-top: 120px;  
+    min-height: 80vh;    
+    width: 100%;
+    max-width: 1200px;   
+    margin: 0 auto;      
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    margin-bottom: v.$space-m;
+    text-align: center;
+    font-family: v.$font-logo;
+    
+    .accent { color: v.$primary; }
+}
+
 body {
   font-family: v.$font-main;
   font-size: v.$font-size-sm;
-  line-height: 1.6; // Pour que le texte "respire"
+  line-height: 1.6; 
   color: v.$text-main;
-  -webkit-font-smoothing: antialiased; // Rend la police plus fine sur Mac/iPhone
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4 {

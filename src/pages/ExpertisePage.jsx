@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Expertise = () => {
-    return(
-        <section id="expertise" className='expertise'>
+const ExpertisePage = () => {
+    return (
+         <section id="expertise" className='expertise'>
         <div className='container'>
           <div className='section-header'>
             <h2>Mon <span className='accent'>Expertise</span></h2>
@@ -44,6 +44,7 @@ const Expertise = () => {
           </div>
         </div>
       </section>
-    )
-}
-export default Expertise;
+    );
+};
+
+export default ExpertisePage;

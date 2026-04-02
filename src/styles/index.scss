@@ -7,15 +7,27 @@
 // 3. Les composants (Le look de chaque partie)
 @use "./components/navbar";
 @use "./components/hero";
-@use "./components/projects";
-@use "./components/contact";
-@use "./components/about";
-@use "./components/expertise";
 @use "./components/footer";
 @use "./components/scroller-top";
+@use "./pages/about-page";
+@use "./pages/project-page";
+@use "./pages/cv-page";
+@use "./pages/contact-page";
+@use "./pages/expertise-page";
 
 
-// 1. BASE (On s'assure que le fond est noir)
+#root, .site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  flex: 1;
+
+}
 * {
   margin: 0;
   padding: 0;
@@ -29,9 +41,6 @@ body {
   overflow-x: hidden;
   width: 100%;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   line-height: 1.6;
 }
 
@@ -41,14 +50,16 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 200px 20px;
 }
+
+
 
 
 // Adaptabilité Mobile
 @media (max-width: 768px) {
   .contact .contact-form .form-row {
-    grid-template-columns: 1fr; // On passe sur une seule colonne sur téléphone
+    grid-template-columns: 1fr; 
   }
 }
 

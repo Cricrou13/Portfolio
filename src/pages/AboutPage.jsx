@@ -1,7 +1,7 @@
 import React from 'react';
 
-const About= () => {
-    return(
+const AboutPage = () => {
+    return (
         <section id="about" className="about container">
                 <div className="about-grid">
                 <div className="about-text">
@@ -43,6 +43,6 @@ const About= () => {
                 </div>
                 </div>
             </section>
-    )
-}
-export default About;
+    );
+};
+export default AboutPage;
