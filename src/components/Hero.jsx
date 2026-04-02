@@ -21,7 +21,7 @@ const Hero = () => {
                <i className="fa-solid fa-folder-open"></i> Voir mes projets
             </a>
             <a href="/CV.pdf" className="btn-outline" download>
-             <i className="fa-solid fa-download"></i> Télécharger mon CV
+             <i className="fa-solid fa-download"></i> Télécharger mon CV (PDF)
             </a>
           </div>
         </div>

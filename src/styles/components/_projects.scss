@@ -1,7 +1,7 @@
 @use"../settings/variables" as v;
 
 .projects {
-  background-color: v.$bg-dark; // Assure-toi que le fond reste sombre ici aussi
+  background-color: v.$bg-dark; 
   padding: 100px 0;
   color: white;
 
@@ -27,12 +27,12 @@
   }
 
   .card {
-    background-color: #1e293b; // Bleu ardoise (couleur de carte)
-    padding: 30px;
-    border-radius: 15px;
+    background-color: v.$bg-card; 
+    padding: v.$space-m;
+    border-radius: v.$border-radius;
     border: 1px solid rgba(255,255,255,0.05);
     text-align: left;
-    transition: 0.3s ease;
+    transition: v.$transition;
 
     h3 { color: v.$primary; font-size: 1.4rem; margin-bottom: 1rem; }
     p { color: #94a3b8; font-size: 0.9rem; line-height: 1.5; }
@@ -49,5 +49,28 @@
       border-color: v.$primary;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
+
+    .btn-link {
+      color: v.$primary-light;
+    }
   }
+
+  .card-header {
+    display: flex;         
+    align-items: center;   
+    gap: 12px;            
+    margin-bottom: 15px;   
+}
+
+.project-icon {
+    width: 32px;          
+    height: 32px;
+    object-fit: contain;   
+    border-radius: 4px;    
+}
+
+.card h3 {
+    margin: 0;             
+    font-size: 1.4rem;
+}
 }
