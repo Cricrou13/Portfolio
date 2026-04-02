@@ -1,7 +1,8 @@
 import React ,{ useState }from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
-  import '../styles/components/_navbar.scss';
+import '../styles/components/_navbar.scss';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +32,9 @@ const Navbar = () => {
           <li><a href="#about" onClick={closeMenu}>À propos</a></li>
           <li><a href="#expertise" onClick={closeMenu}>Expertise</a></li>
           <li><a href="#projects" onClick={closeMenu}>Projets</a></li>
+          <li><Link to="/cv" onClick={closeMenu}>CV</Link></li>
           <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+         
         </ul>
       </div>
       <AnimatePresence>
