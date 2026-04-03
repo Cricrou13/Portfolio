@@ -1,9 +1,20 @@
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const CVPage = () => {
-    const [showPreview, setShowPreview] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Bloquer le scroll de la page quand la modal est ouverte
+    useEffect(() => {
+        if (isModalOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        // Nettoyage si le composant est démonté
+        return () => { document.body.style.overflow = 'unset'; };
+    }, [isModalOpen]);
 
     return (
         <section className="cv-page container">
@@ -13,7 +24,6 @@ const CVPage = () => {
                 </h2>
                 
                 <div className="cv-actions">
-                    {/* LIEN DE TÉLÉCHARGEMENT : Doit pointer vers le fichier EXACT dans le dossier public */}
                     <a 
                         href="/cv.pdf" 
                         download="CV_Christophe_Delclos.pdf"
@@ -24,29 +34,43 @@ const CVPage = () => {
                     
                     <button 
                         className="btn-secondary" 
-                        onMouseEnter={() => setShowPreview(true)}
-                        onMouseLeave={() => setShowPreview(false)}
+                        onClick={() => setIsModalOpen(true)}
                     >
-                        <i className={`fa-solid ${showPreview ? 'fa-eye-slash' : 'fa-eye'}`}></i>
-                        {showPreview ? " Aperçu..." : " Survoler pour l'aperçu"}
+                        <i className="fa-solid fa-eye"></i> Voir l'aperçu
                     </button>
                 </div>
 
-                <div className="preview-container">
-                    <AnimatePresence>
-                        {showPreview && (
+                <AnimatePresence>
+                    {isModalOpen && (
+                        <div className="cv-modal-overlay">
+                            {/* Fond sombre */}
                             <motion.div 
-                                className="cv-preview"
-                                initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                                animate={{ opacity: 1, y: 0, scale: 1 }}
-                                exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                                transition={{ duration: 0.3 }}
+                                className="overlay-bg"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                onClick={() => setIsModalOpen(false)}
+                            />
+
+                            {/* Contenu de la Modal */}
+                            <motion.div 
+                                className="cv-modal-content"
+                                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                                transition={{ type: "spring", damping: 25, stiffness: 300 }}
                             >
-                                <img src="/assets/cv.webp" alt="Aperçu du CV" />
+                                <button className="close-modal" onClick={() => setIsModalOpen(false)}>
+                                    <i className="fa-solid fa-xmark"></i>
+                                </button>
+                                
+                                <div className="modal-scroll-area">
+                                    <img src="/assets/cv.webp" alt="Aperçu du CV" />
+                                </div>
                             </motion.div>
-                        )}
-                    </AnimatePresence>
-                </div>
+                        </div>
+                    )}
+                </AnimatePresence>
             </div>
         </section>
     );

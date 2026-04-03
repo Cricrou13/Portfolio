@@ -35,7 +35,7 @@ export const projectData = [
         RESULTATS: Le système permet désormais une gestion fluide du CRUD (Création, Lecture, Mise à jour, Suppression) tout en garantissant l'intégrité des données utilisateurs.
 
         PERSPECTIVES D'AMELIORATION: Le projet pourrait être enrichi par l'implémentation d'un moteur de recherche avancé basé sur les catégories ou les auteurs des livres.`,
-        tags: ["Node.js", "MongoDB", "API"],
+        tags: ["Node.js", "MongoDB"],
         link: "https://github.com/Cricrou13/Mon-Vieux-Grimoire.git",
         image: "/assets/grimoire.webp"
     },

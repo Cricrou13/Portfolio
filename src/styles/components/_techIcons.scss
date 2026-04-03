@@ -1,0 +1,62 @@
+@use "../settings/variables" as v;
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+  max-width: 500px;
+
+   @media (max-width: 768px) {
+    margin: 30px;
+   }
+}
+
+/* Badge */
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #7aa2ff;
+  background: rgba(122, 162, 255, 0.08);
+  border: 1px solid rgba(122, 162, 255, 0.25);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+  cursor: default;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.tech-item:nth-child(1) { animation-delay: 0.1s; }
+.tech-item:nth-child(2) { animation-delay: 0.2s; }
+.tech-item:nth-child(3) { animation-delay: 0.3s; }
+.tech-item:nth-child(4) { animation-delay: 0.4s; }
+.tech-item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Icônes */
+.tech-item img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* Hover effet premium */
+.tech-item:hover {
+  transform: translateY(-3px) scale(1.03);
+
+  background: rgba(122, 162, 255, 0.15);
+  border-color: rgba(122, 162, 255, 0.6);
+
+  box-shadow: 0 0 12px rgba(122, 162, 255, 0.4);
+}
