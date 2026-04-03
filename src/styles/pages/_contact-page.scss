@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center; 
-    padding-top: 150px;
+    padding-top: 100px;
 
     h1 {
         margin-bottom: 3rem;
@@ -33,8 +33,26 @@
 
         p {
             color: v.$text-muted;
-            margin-bottom: 1.5rem;
+            margin-bottom: 30px;
         }
+
+    .contact-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, v.$primary, lighten(v.$primary, 20%));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+      // Style pour le deuxième paragraphe
+    .contact-subtitle {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.7); // Blanc un peu transparent
+        font-weight: 400;
+        font-style: italic; // Par exemple pour bien marquer la différence
+    }
+}
 
         .contact-email {
             display: inline-flex;

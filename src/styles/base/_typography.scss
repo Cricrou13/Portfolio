@@ -1,5 +1,28 @@
 @use"../settings/variables" as v;
 
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 2.5rem;
+    line-height: 1.2;
+
+    .accent {
+        background: linear-gradient(135deg, v.$primary 30%, lighten(v.$primary, 20%));
+        background-clip: text;
+        -webkit-background-clip: text; /* Pour Safari */
+        -webkit-text-fill-color: transparent;
+        display: inline-block; /* Recommandé pour les dégradés de texte */
+    }
+}
+
+/* Version responsive pour mobile */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
 .page-container {
     padding-top: 120px;  
     min-height: 80vh;    

@@ -49,9 +49,58 @@ body {
 // Mise en page globale
 .container {
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 200px 15px;
+}
+
+.container-back {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 200px 20px;
+  padding: 120px 20px 0;
+  position: relative;
+  z-index: 11000;
+  pointer-events: none;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: v.$text-main;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  pointer-events: auto;
+  cursor: pointer;
+
+  &.focus {
+    outline: none;
+  }
+
+  .arrow {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    opacity: 1;
+    color: v.$primary; // Utilise votre variable bleue accent
+    
+    .arrow {
+      transform: translateX(-5px); // Animation de la flèche
+    }
+  }
+}
+
+// Ajustement pour le mobile
+@media (max-width: 768px) {
+  .container-back {
+    padding-top: 100px;
+  }
 }
 
 

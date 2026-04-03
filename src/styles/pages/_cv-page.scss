@@ -34,20 +34,14 @@
         text-align: center;
         width: 100%;
 
-        h2 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 2.5rem;
-            color: white;
-
-            .accent {
-                color: v.$primary;
-                background: linear-gradient(135deg, v.$primary 30%, lighten(v.$primary, 20%));
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
+        .accent {
+            color: v.$primary;
+            background: linear-gradient(135deg, v.$primary 30%, lighten(v.$primary, 20%));
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     }
+}
 
     .cv-actions {
         display: flex;
@@ -132,4 +126,3 @@
 
     .fade-in { animation: fadeIn 0.5s ease; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-}

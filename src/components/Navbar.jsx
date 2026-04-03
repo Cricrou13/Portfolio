@@ -15,8 +15,7 @@ const Navbar = () => {
     <nav className='navbar'>
       <div className="navbar-content container">
         <div className="logo">
-          <span className='first-letter'>C</span>
-          <span className='second-letter'>D</span>
+          <img src="./assets/Logo Dev.png" />
         </div>
 
           {/* LE BOUTON BURGER (Visible uniquement sur mobile) */}

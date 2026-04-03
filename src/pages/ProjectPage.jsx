@@ -6,7 +6,7 @@ const ProjectPage = () => {
     return (
         <main className="projects-page page-container">
             <header className="page-header">
-                <h1>Mes <span className="accent">Projets</span></h1>
+                <h1 className='section-title'>Mes <span className="accent">Projets</span></h1>
                 <p>Découvrez mes réalisations récentes en développement Web.</p>
             </header>
 

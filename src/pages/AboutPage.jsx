@@ -5,7 +5,7 @@ const AboutPage = () => {
         <section id="about" className="about container">
                 <div className="about-grid">
                 <div className="about-text">
-                    <h2 className="section-title">Mon <span className="accent">Parcours</span></h2>
+                    <h1 className="section-title">Mon <span className="accent">Parcours</span></h1>
                     <p>
                     Après plus de 20 ans dans les métiers manuels et techniques, j'ai choisi de mettre ma <strong>rigueur opérationnelle</strong> au service du développement web.
                     </p>
@@ -29,15 +29,15 @@ const AboutPage = () => {
 
                 <div className="about-stats">
                     <div className="stat-card">
-                    <h3>20</h3>
+                    <h2>20</h2>
                     <p>Ans d'expérience technique</p>
                     </div>
                     <div className="stat-card accent-card">
-                    <h3>100%</h3>
+                    <h2>100%</h2>
                     <p>Passionné par le code</p>
                     </div>
                     <div className="stat-card">
-                    <h3>31</h3>
+                    <h2>31</h2>
                     <p>Basé en Haute-Garonne</p>
                     </div>
                 </div>

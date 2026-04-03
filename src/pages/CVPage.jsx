@@ -6,14 +6,8 @@ const CVPage = () => {
 
     return (
         <section className="cv-page container">
-            <div className="back-nav">
-                <Link to="/" className="btn-back">
-                    <i className="fa-solid fa-arrow-left"></i> Retour à l'accueil
-                </Link>
-            </div>
-
             <div className="cv-content">
-                <h2>Mon <span className="accent">Curriculum Vitae</span></h2>
+                <h2 className='section-title'>Mon <span className="accent">Curriculum Vitae</span></h2>
                 
                 <div className="cv-actions">
                     <a href="/CV.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary">

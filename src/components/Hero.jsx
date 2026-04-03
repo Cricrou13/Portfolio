@@ -8,7 +8,7 @@ const Hero = () => {
             <span className="icon">💎</span> • Développeur Full-Stack •
           </div>
           
-          <h1>DELCLOS <span className="accent">Christophe</span></h1>
+          <h1 className='section-title'>DELCLOS <span className="accent">Christophe</span></h1>
           
           <p className="description">
             Ancien électricien reconverti dans le numérique. 
