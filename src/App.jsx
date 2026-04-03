@@ -61,6 +61,7 @@ function App() {
             <Route path="/projects" element={<ProjectPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/cv" element={<CVPage />} />
+            <Route path='*' element={<Hero />} />
           </Routes>
         </main>
 

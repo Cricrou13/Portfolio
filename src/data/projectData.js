@@ -17,7 +17,7 @@ export const projectData = [
             PERSPECTIVES D'AMELIORATION: Une évolution intéressante serait d'intégrer une solution de gestion d'état globale comme Redux pour faciliter l'ajout de fonctionnalités de favoris.`,
         tags: ["React", "Sass", "Web Design"],
         link: "https://github.com/Cricrou13/React-LocImmo.git",
-        image: "/assets/LOGO.svg"
+        image: "/assets/LOGO.webp"
     },
     {
         id: 2,
@@ -37,7 +37,7 @@ export const projectData = [
         PERSPECTIVES D'AMELIORATION: Le projet pourrait être enrichi par l'implémentation d'un moteur de recherche avancé basé sur les catégories ou les auteurs des livres.`,
         tags: ["Node.js", "MongoDB", "API"],
         link: "https://github.com/Cricrou13/Mon-Vieux-Grimoire.git",
-        image: "/assets/grimoire.jpg"
+        image: "/assets/grimoire.webp"
     },
     {
         id: 3,
@@ -57,7 +57,7 @@ export const projectData = [
         PERSPECTIVES D'AMELIORATION: J'envisage d'ajouter un mode sombre pour le confort visuel et d'approfondir l'optimisation du SEO sémantique.`,
         tags: ["Vite", "React", "Sass"],
         link: "https://github.com/Cricrou13/Portfolio.git",
-        image: "/assets/logo.jpg"
+        image: "/assets/LogoDev.webp"
     },
     {
         id: 4,
@@ -77,7 +77,7 @@ export const projectData = [
         PERSPECTIVES D'AMELIORATION: L'ajout de JavaScript permettrait d'intégrer des filtres dynamiques pour affiner la recherche d'hôtels en temps réel.`,
         tags: ["HTML", "CSS"],
         link: "https://github.com/Cricrou13/booki-starter-code-master.git",
-        image: "/assets/Booki.jpg"
+        image: "/assets/Booki.webp"
     },
     {
         id: 5,
@@ -97,6 +97,6 @@ export const projectData = [
         PERSPECTIVES D'AMELIORATION: La mise en place d'un système de galerie d'images plus moderne pourrait encore accroître l'engagement visuel des clients.`,
         tags: ["HTML", "CSS", "SEO"],
         link: "https://github.com/Cricrou13/Nina-Carducci.git",
-        image: "/assets/nina.jpg"
+        image: "/assets/nina.webp"
     }
 ];

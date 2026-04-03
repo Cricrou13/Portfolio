@@ -19,6 +19,7 @@ const ProjectCard = ({ project }) => {
                             src={project.image} 
                             alt={`Icône de ${project.title}`} 
                             className="project-icon" 
+                            width="50" height="50"
                         />
                     )}
                     <h3>{project.title}</h3>

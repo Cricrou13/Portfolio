@@ -1,5 +1,6 @@
+// eslint-disable-next-line no-unused-vars
+import { motion, AnimatePresence } from 'framer-motion';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 const CVPage = () => {
     const [showPreview, setShowPreview] = useState(false);
@@ -7,30 +8,48 @@ const CVPage = () => {
     return (
         <section className="cv-page container">
             <div className="cv-content">
-                <h2 className='section-title'>Mon <span className="accent">Curriculum Vitae</span></h2>
+                <h2 className="section-title">
+                    Mon <span className="accent">Curriculum Vitae</span>
+                </h2>
                 
                 <div className="cv-actions">
-                    <a href="/CV.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                    {/* LIEN DE TÉLÉCHARGEMENT : Doit pointer vers le fichier EXACT dans le dossier public */}
+                    <a 
+                        href="/cv.pdf" 
+                        download="CV_Christophe_Delclos.pdf"
+                        className="btn-primary"
+                    >
                         <i className="fa-solid fa-file-pdf"></i> Télécharger le PDF
                     </a>
                     
-                    {/* Le bouton magique */}
                     <button 
                         className="btn-secondary" 
-                        onClick={() => setShowPreview(!showPreview)}
+                        onMouseEnter={() => setShowPreview(true)}
+                        onMouseLeave={() => setShowPreview(false)}
                     >
                         <i className={`fa-solid ${showPreview ? 'fa-eye-slash' : 'fa-eye'}`}></i>
-                        {showPreview ? " Cacher l'aperçu" : " Voir l'aperçu"}
+                        {showPreview ? " Aperçu..." : " Survoler pour l'aperçu"}
                     </button>
                 </div>
 
-                {showPreview && (
-                    <div className="cv-preview fade-in">
-                        <img src="/assets/cv.jpg" alt="Aperçu de mon CV" className="img-fluid" />
-                    </div>
-                )}
+                <div className="preview-container">
+                    <AnimatePresence>
+                        {showPreview && (
+                            <motion.div 
+                                className="cv-preview"
+                                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <img src="/assets/cv.webp" alt="Aperçu du CV" />
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </div>
             </div>
         </section>
     );
 };
+
 export default CVPage;

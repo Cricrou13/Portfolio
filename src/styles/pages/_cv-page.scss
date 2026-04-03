@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: center;
 
+    // 1. On garde le bouton retour bien en place
     .back-nav {
         width: 100%;
         max-width: 1000px; 
@@ -34,24 +35,31 @@
         text-align: center;
         width: 100%;
 
-        .accent {
-            color: v.$primary;
-            background: linear-gradient(135deg, v.$primary 30%, lighten(v.$primary, 20%));
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+        // Titre
+        h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 2.5rem;
+            color: white;
+
+            .accent {
+                color: v.$primary;
+                background: linear-gradient(135deg, v.$primary 30%, lighten(v.$primary, 20%));
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
         }
     }
-}
 
     .cv-actions {
         display: flex;
         gap: 1.2rem;
         flex-wrap: wrap;
         justify-content: center;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
         width: 100%;
 
-        // Base commune
         .btn-action {
             display: inline-flex;
             align-items: center;
@@ -62,43 +70,34 @@
             font-weight: bold;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
-            position: relative; // INDISPENSABLE pour le ::before
+            position: relative;
             z-index: 1;
             overflow: hidden; 
         }
 
-        // --- LE BOUTON TÉLÉCHARGER (Celui qui s'anime) ---
         .btn-primary {
             @extend .btn-action; 
             background-color: transparent;
             color: v.$primary;
             border: 2px solid v.$primary;
-            box-shadow: 0 4px 14px rgba(v.$primary, 0.1); 
 
             &::before {
                 content: '';
                 position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
+                top: 0; left: -100%;
+                width: 100%; height: 100%;
                 background-color: v.$primary;
-                transition: left 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+                transition: left 0.5s ease;
                 z-index: -1; 
             }
 
             &:hover {
                 color: white;
                 transform: translateY(-3px);
-                box-shadow: 0 8px 25px rgba(v.$primary, 0.3);
-
-                &::before {
-                    left: 0; 
-                }
+                &::before { left: 0; }
             }
         }
 
-        // --- LE BOUTON APERÇU ---
         .btn-secondary {
             @extend .btn-action;
             background-color: transparent;
@@ -114,15 +113,24 @@
         }
     }
 
+    // --- POUR ÉVITER LE SAUT ---
+    .preview-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        min-height: 600px; 
+        margin-top: 1rem;
+        position: relative;
+    }
+
     .cv-preview {
         max-width: 800px;
-        width: 100%;
+        width: 90%;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         
         img { width: 100%; height: auto; display: block; }
     }
-
-    .fade-in { animation: fadeIn 0.5s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+}

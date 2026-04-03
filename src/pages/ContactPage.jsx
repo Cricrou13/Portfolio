@@ -52,16 +52,16 @@ const ContactPage = () => {
                 <form className='contact-form' onSubmit={handleSubmit}>
                     <div className='form-row'>
                         <div className='form-group'>
-                            {/* Très important : l'attribut name="name" */}
+                           
                             <input type="text" name="name" placeholder="Votre nom" required />
                         </div>
                         <div className='form-group'>
-                            {/* Très important : l'attribut name="email" */}
+                           
                             <input type="email" name="email" placeholder="Votre email" required />
                         </div>
                     </div>
                     <div className='form-group'>
-                        {/* Très important : l'attribut name="message" */}
+                      
                         <textarea name="message" placeholder="Votre message..." rows="5" required></textarea>
                     </div>
 
@@ -72,12 +72,12 @@ const ContactPage = () => {
                         {status === "ERROR" && <p style={{ color: '#e74c3c' }}>❌ Erreur. Vérifiez vos spams (activation requise au 1er envoi).</p>}
                     </div>
 
-                    <button 
+                    <button
                         type="submit" 
                         className="btn-submit" 
                         disabled={status === "SENDING"}
                     >
-                        {status === "SENDING" ? "Envoi..." : "Envoyer le message"}
+                        {status === "SENDING" ? "Envoi..." : "🚀 Envoyer le message"}
                     </button>
                 </form>
             </section>

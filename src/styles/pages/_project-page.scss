@@ -6,8 +6,14 @@
   .page-header {
     text-align: center;
     margin-bottom: 50px;
-    h1 { font-size: 3rem; margin-bottom: 10px; }
-    p { color: v.$text-muted; font-size: 1.1rem; }
+    h1 { 
+      font-size: 3rem; 
+      margin-bottom: 10px; 
+    }
+    p { 
+      color: v.$text-muted; 
+      font-size: 1.1rem; 
+    }
   }
 
   // LA GRILLE
@@ -29,13 +35,22 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative; // Indispensable pour l'animation interne
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 
+  // --- EFFET AU SURVOL DE LA CARTE ---
   &:hover {
     transform: translateY(-10px);
     border-color: v.$primary;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     background: lighten(v.$bg-dark, 5%);
+
+    // Fait apparaître le bouton
+    .btn-link {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
   }
 
   .card-header {
@@ -84,18 +99,24 @@
     }
   }
 
-  // LE BOUTON
+  // --- LE BOUTON (Petit et caché par défaut) ---
   .btn-link {
     display: inline-block;
-    padding: 10px 20px;
+    align-self: center;      /* Centre le bouton horizontalement */
+    padding: 6px 16px;       /* Taille réduite (tout petit) */
+    font-size: 0.75rem;      /* Texte plus petit */
+    border-radius: 30px;     /* Forme pilule élégante */
     border: 1px solid v.$primary;
     color: v.$primary;
-    border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
     text-align: center;
-    transition: all 0.3s;
+    
+    /* ÉTAT CACHÉ PAR DÉFAUT */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px); /* Animation de montée */
+    transition: all 0.3s ease-in-out;
 
     &:hover {
       background: v.$primary;
