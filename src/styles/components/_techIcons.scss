@@ -45,10 +45,14 @@
 }
 
 /* Icônes */
-.tech-item img {
-  width: 16px;
-  height: 16px;
+.tech-item svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
   object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+  display: block;
 }
 
 /* Hover effet premium */

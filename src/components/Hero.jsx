@@ -3,17 +3,12 @@ import { projectData } from "../data/projectData";
 import { techIcons } from "../data/techIcons";
 
 const Hero = () => {
-
-  // 🔥 Génération dynamique de la stack
   const techStack = [
-    ...new Set(
-      projectData.flatMap(project => project.tags)
-    )
+    ...new Set(projectData.flatMap(project => project.tags))
   ];
 
   return (
     <header id="accueil" className="hero container">
-      
       <div className="hero-left">
         <div className="badge-tech">
           <span className="icon">💎</span> • Développeur Full-Stack •
@@ -23,19 +18,14 @@ const Hero = () => {
           DELCLOS <span className="accent">Christophe</span>
         </h1>
 
-        {/* ✅ AJOUT ICI */}
         <div className="tech-stack">
           {techStack.map((tech, index) => (
-            <span key={index} className="tech-item">
-      
-              {techIcons[tech] && (
-                <img src={techIcons[tech]} alt={tech} />
-      )}
-      
-              {tech}
-            </span>
-  ))}
-</div>
+            <div key={index} className="tech-item">
+                {techIcons[tech] ? techIcons[tech] : null}
+                <span>{tech}</span>
+            </div>       
+          ))}
+        </div>
         
         <p className="description">
           Ancien électricien reconverti dans le numérique. 
@@ -44,15 +34,14 @@ const Hero = () => {
         </p>
       </div>
 
-      <div className="hero-image">
+      <div className="hero-right"> {/* Changé hero-image par hero-right pour la clarté */}
         <div className="image-wrapper">
-          {/* <img src={profilePic} alt="Christophe Delclos" /> */}
+          {/* 2. On insère la photo ici */}
+          <img src="/assets/Photo.jpg" alt="Christophe Delclos" className="profile-img" />
         </div>
       </div>
-
     </header>
   );
 };
 
 export default Hero;
-
