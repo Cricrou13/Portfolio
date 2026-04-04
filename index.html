@@ -2,28 +2,52 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
+    <!-- Attention : évite les espaces dans les noms de fichiers (Logo_Dev.png est mieux) -->
     <link rel="icon" type="image/svg+xml" href="/assets/Logo Dev.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Christophe Delclos | Développeur Web Fullstack</title>
     <meta name="description" content="Ancien électricien reconverti, je mets mes 20 ans de rigueur technique au service du développement web. Découvrez mes projets et mon parcours.">
+
+    <!-- Open Graph (LinkedIn, Facebook, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://portfolio-theta-pink-67.vercel.app/" />
     <meta property="og:title" content="Christophe Delclos | Développeur Full-Stack" />
     <meta property="og:description" content="Ancien électricien reconverti, je mets mes 20 ans de rigueur technique au service du développement web." />
-    <meta property="og:image" content="/assets/og-image.jpg" />
-    <meta property="og:url" content="https://votre-site.com" />
-    
-    <!-- TITRE DE L'ONGLET -->
-    <title>Christophe Delclos | Développeur Web Fullstack</title>
+    <!-- IMPORTANT : Utilise une URL absolue pour l'image -->
+    <meta property="og:image" content="https://portfolio-theta-pink-67.vercel.app/assets/og-image.jpg" />
 
-    <!-- GOOGLE FONTS (Inter et Montserrat pour le logo) -->
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Christophe Delclos | Développeur Full-Stack">
+    <meta name="twitter:description" content="Découvrez mon portfolio de développeur web.">
+    <meta name="twitter:image" content="https://portfolio-theta-pink-67.vercel.app/assets/og-image.jpg">
+
+    <!-- RICH SNIPPETS (JSON-LD Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Christophe Delclos",
+      "jobTitle": "Développeur Web",
+      "url": "https://portfolio-theta-pink-67.vercel.app/",
+      "image": "https://portfolio-theta-pink-67.vercel.app/assets/og-image.jpg",
+      "description": "Ancien électricien reconverti dans le numérique. Expert en création d'expériences digitales performantes.",
+      "sameAs": [
+        "https://github.com/Cricrou13",
+        "TON_LIEN_LINKEDIN_ICI"
+      ]
+    }
+    </script>
+
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     
   </head>
   <body>
-    <!-- Point d'ancrage de React -->
     <div id="root"></div>
-    
-    <!-- Le script qui allume tout le système -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
