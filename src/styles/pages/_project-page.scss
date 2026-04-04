@@ -18,13 +18,21 @@
 
   // LA GRILLE
   .projects-grid {
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+
+    @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr); // 2 colonnes sur tablette
+  }
+
+  // Responsive pour mobile
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // 1 colonne sur mobile
+  }
   }
 }
 

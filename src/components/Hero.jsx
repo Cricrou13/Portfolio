@@ -28,7 +28,7 @@ const Hero = () => {
         </div>
         
         <p className="description">
-          Ancien électricien reconverti dans le numérique. 
+          Ancien électricien reconverti dans le numérique. <br />
           Je combine 20 ans de rigueur technique à la création 
           d'expériences digitales modernes et performantes.
         </p>
