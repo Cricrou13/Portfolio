@@ -57,7 +57,7 @@
 }
 
 /* Version Mobile */
-@media (max-width: v.$tablet) {
+@media (max-width: 768px) {
   .footer {
     .footer-content {
       flex-direction: column;

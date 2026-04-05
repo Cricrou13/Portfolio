@@ -97,7 +97,7 @@
     }
 
     // --- 5. LE RESPONSIVE (Vérification bords téléphone) ---
-    @media (max-width: v.$tablet) {
+    @media (max-width: 1024px) {
         padding: 3rem 1.5rem;
 
         .about-grid {

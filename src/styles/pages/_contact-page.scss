@@ -134,7 +134,7 @@
     }
 
     // --- VÉRIFICATION RESPONSIVE ---
-    @media (max-width: v.$tablet) {
+    @media (max-width: 1024px) {
         .contact-form {
             .form-row {
                 grid-template-columns: 1fr; // Nom et Email l'un sur l'autre sur mobile

@@ -83,7 +83,7 @@
     }
 
     // --- VÉRIFICATION RESPONSIVE ---
-    @media (max-width: v.$tablet) {
+    @media (max-width: 1024px) {
         padding: 3rem 1.5rem;
 
         .section-header h2 {
