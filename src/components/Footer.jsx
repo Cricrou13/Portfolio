@@ -21,7 +21,7 @@ const Footer =() => {
           </div>
 
           <div className='footer-copy'>
-             <p>© 2025 - Christophe Delclos - Tous droits réservés</p>
+             <p>© 2026 - Christophe Delclos - Tous droits réservés</p>
           </div>
         </div>
       </footer>
