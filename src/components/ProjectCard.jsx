@@ -58,9 +58,9 @@ const ProjectCard = ({ project }) => {
             <div className="card">
                 <div className="card-header">
                     {project.image && (
-                        <img src={project.image} alt={project.title} className="project-icon" width="50" height="50" />
+                        <img src={project.image} alt="" aria-hidden="true" className="project-icon" width="50" height="50" />
                     )}
-                    <h3>{project.title}</h3>
+                    <h2>{project.title}</h2>
                 </div>
                 <p>{project.description}</p>
                 <div className="tags">

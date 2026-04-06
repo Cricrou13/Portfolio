@@ -19,9 +19,9 @@ const CVPage = () => {
     return (
         <section className="cv-page container">
             <div className="cv-content">
-                <h2 className="section-title">
+                <h1 className="section-title">
                     Mon <span className="accent">Curriculum Vitae</span>
-                </h2>
+                </h1>
                 
                 <div className="cv-actions">
                     <a 

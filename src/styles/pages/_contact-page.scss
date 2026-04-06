@@ -63,7 +63,7 @@
             border-radius: 50px;
             
             a {
-                color: v.$primary;
+                color: #bababa;
                 text-decoration: none;
                 font-weight: bold;
                 &:hover { text-decoration: underline; }
@@ -113,7 +113,7 @@
         }
 
         .btn-submit {
-            background-color: v.$primary;
+            background-color: #2454B2;
             color: white;
             padding: 1rem 2rem;
             border: none;

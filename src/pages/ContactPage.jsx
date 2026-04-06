@@ -38,32 +38,31 @@ const ContactPage = () => {
     };
 
     return (
-        <div className="page-content">
-            <section id='contact' className='contact'>
-                <div className='contact-header'>
-                    <p className='contact-title'>Un projet en tête ? Discutons-en.</p>
-                    <p className='contact-subtitle'>Remplissez ce formulaire, je réponds rapidement</p>
-                    <div className='contact-email'>
-                        <a href="mailto:delclos.c13@gmail.com">delclos.c13@gmail.com</a>
-                        <i className="fa-solid fa-envelope"></i> 
-                    </div>
-                </div>
-            
-                <form className='contact-form' onSubmit={handleSubmit}>
-                    <div className='form-row'>
-                        <div className='form-group'>
-                           
-                            <input type="text" name="name" placeholder="Votre nom" required />
-                        </div>
-                        <div className='form-group'>
-                           
-                            <input type="email" name="email" placeholder="Votre email" required />
-                        </div>
+    <div className="page-content">
+        <section id='contact' className='contact'>
+            <div className='contact-header'>
+                {/* CORRECTION 1 : Ajout d'un H1 pour la structure sémantique */}
+                <h1>Contact</h1>
+                <h2 className='contact-title'>Un projet en tête ? Discutons-en.</h2>
+                <p className='contact-subtitle'>Remplissez ce formulaire, je réponds rapidement</p>
+            </div>
+        
+            <form className='contact-form' onSubmit={handleSubmit}>
+                <div className='form-row'>
+                    <div className='form-group'>
+                        {/* CORRECTION 3 : Ajout des labels (indispensable pour les erreurs rouges) */}
+                        <label htmlFor="name">Votre nom</label>
+                        <input id="name" type="text" name="name" placeholder="Ex: Jean Dupont" required />
                     </div>
                     <div className='form-group'>
-                      
-                        <textarea name="message" placeholder="Votre message..." rows="5" required></textarea>
+                        <label htmlFor="email">Votre email</label>
+                        <input id="email" type="email" name="email" placeholder="Ex: jean@mail.com" required />
                     </div>
+                </div>
+                <div className='form-group'>
+                    <label htmlFor="message">Votre message</label>
+                    <textarea id="message" name="message" placeholder="Votre message..." rows="5" required></textarea>
+                </div>
 
                     {/* Affichage des messages selon l'état */}
                     <div className="form-feedback" style={{ marginBottom: '20px', minHeight: '24px' }}>

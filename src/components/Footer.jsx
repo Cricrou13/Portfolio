@@ -9,15 +9,15 @@ const Footer =() => {
           </div>
 
           <div className='footer-socials'>
-              <a href="mailto:delclos.c13@gmail.com" title="Email">
-                <i className="fa-solid fa-envelope"></i>
-              </a>
-              <a href="https://github.com/Cricrou13" target="_blank" rel="noreferrer" title="GitHub">
-                <i className="fa-brands fa-github"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/christophe-delclos-65a6563a7" target="_blank" rel="noreferrer" title="LinkedIn">
-                <i className="fa-brands fa-linkedin-in"></i>
-              </a>
+             <a href="mailto:delclos.c13@gmail.com" aria-label="Envoyer un email à Christophe Delclos">
+               <i className="fa-solid fa-envelope" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/Cricrou13" target="_blank" rel="noreferrer" aria-label="Visiter mon profil GitHub">
+              <i className="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/christophe-delclos-65a6563a7" target="_blank" rel="noreferrer" aria-label="Visiter mon profil LinkedIn">
+              <i className="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
           </div>
 
           <div className='footer-copy'>
