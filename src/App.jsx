@@ -9,6 +9,7 @@ import ProjectPage from './pages/ProjectPage';
 import ContactPage from './pages/ContactPage';
 import CVPage from './pages/CVPage';
 import Footer from './components/Footer';
+import Error from './pages/Error';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -61,7 +62,7 @@ function App() {
             <Route path="/projects" element={<ProjectPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/cv" element={<CVPage />} />
-            <Route path='*' element={<Hero />} />
+            <Route path='*' element={<Error />} />
           </Routes>
         </main>
 

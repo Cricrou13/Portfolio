@@ -1,0 +1,29 @@
+@use "../settings/variables" as v;
+
+.error-page {
+  height: 80vh; // Prend presque toute la hauteur de l'écran
+  display: flex;
+  flex-direction: column;
+  justify-content: center; // Centre verticalement
+  align-items: center; // Centre horizontalement
+  text-align: center;
+  padding: 0 20px;
+
+  h1 {
+    font-size: clamp(6rem, 15vw, 10rem); // Taille dynamique (plus gros sur grand écran)
+    color: #4a90e2; 
+    margin: 0;
+    text-shadow: 0 0 20px rgba(74, 144, 226, 0.3); // Un léger halo pour faire "électrique"
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin: 10px 0;
+  }
+
+  p {
+    font-size: 1.2rem;
+    opacity: 0.7; // Légèrement transparent pour créer une hiérarchie visuelle
+    max-width: 500px;
+  }
+}
