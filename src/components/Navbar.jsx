@@ -3,9 +3,13 @@ import React ,{ useState }from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../styles/components/_navbar.scss';
 import { Link } from 'react-router-dom';
+import LanguageSelector from './LanguageSelector';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { t } = useTranslation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -25,14 +29,18 @@ const Navbar = () => {
           <span></span>
         </div>
 
+          <li>
+            <LanguageSelector />
+          </li>
+
          {/* LES LIENS (Desktop constant / Mobile conditionnel) */}
         <ul className={`nav-links ${isOpen ? 'mobile-open' : ''}`}>
-          <li><Link to="/" onClick={closeMenu}>Accueil</Link></li>
-          <li><Link to="/about" onClick={closeMenu}>À propos</Link></li>
-          <li><Link to="/expertise" onClick={closeMenu}>Expertise</Link></li>
-          <li><Link to="/projects" onClick={closeMenu}>Projets</Link></li>
-          <li><Link to="/cv" onClick={closeMenu}>CV</Link></li>
-          <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
+          <li><Link to="/" onClick={closeMenu}>{t('Accueil')}</Link></li>
+          <li><Link to="/about" onClick={closeMenu}>{t('A Propos')}</Link></li> 
+          <li><Link to="/expertise" onClick={closeMenu}>{t('Expertise')}</Link></li>
+          <li><Link to="/projects" onClick={closeMenu}>{t('Projets')}</Link></li>
+          <li><Link to="/cv" onClick={closeMenu}>{t('CV')}</Link></li> 
+          <li><Link to="/contact" onClick={closeMenu}>{t('Contact')}</Link></li>
          
         </ul>
       </div>

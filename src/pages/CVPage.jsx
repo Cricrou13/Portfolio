@@ -1,9 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const CVPage = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+     const { t } = useTranslation();
 
     // Bloquer le scroll de la page quand la modal est ouverte
     useEffect(() => {
@@ -20,7 +22,7 @@ const CVPage = () => {
         <section className="cv-page container">
             <div className="cv-content">
                 <h1 className="section-title">
-                    Mon <span className="accent">Curriculum Vitae</span>
+                    {t('cv_title')} <span className="accent">{t('cv_title_accent')}</span>
                 </h1>
                 
                 <div className="cv-actions">
@@ -29,14 +31,14 @@ const CVPage = () => {
                         download="CV_Christophe_Delclos.pdf"
                         className="btn-primary"
                     >
-                        <i className="fa-solid fa-file-pdf"></i> Télécharger le PDF
+                        <i className="fa-solid fa-file-pdf"></i>{t('charge_cv')}
                     </a>
                     
                     <button 
                         className="btn-secondary" 
                         onClick={() => setIsModalOpen(true)}
                     >
-                        <i className="fa-solid fa-eye"></i> Voir l'aperçu
+                        <i className="fa-solid fa-eye"></i>{t('visual_cv')}
                     </button>
                 </div>
 

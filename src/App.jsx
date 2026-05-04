@@ -10,6 +10,8 @@ import ContactPage from './pages/ContactPage';
 import CVPage from './pages/CVPage';
 import Footer from './components/Footer';
 import Error from './pages/Error';
+import LanguageSelector from './components/LanguageSelector';
+import { useTranslation } from 'react-i18next';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -26,6 +28,7 @@ function ScrollToTop() {
 function BackToHome() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   // Si on est sur l'accueil ("/"), on n'affiche rien (null)
   if (location.pathname === '/') {
@@ -40,7 +43,7 @@ function BackToHome() {
         className="back-link"
         style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
       >
-        <span className="arrow">←</span> Retour à l'accueil
+        <span className="arrow">←</span> {t("Back_home")}
       </button>
     </div>
   );

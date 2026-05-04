@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ContactPage = () => {
     // 1. On définit l'état du formulaire (Envoi, Succès, Erreur)
     const [status, setStatus] = useState(""); 
+     const { t } = useTranslation();
 
     const handleSubmit = async (e) => {
         e.preventDefault(); // Empêche de quitter la page
@@ -42,33 +44,33 @@ const ContactPage = () => {
         <section id='contact' className='contact'>
             <div className='contact-header'>
                 {/* CORRECTION 1 : Ajout d'un H1 pour la structure sémantique */}
-                <h1>Contact</h1>
-                <h2 className='contact-title'>Un projet en tête ? Discutons-en.</h2>
-                <p className='contact-subtitle'>Remplissez ce formulaire, je réponds rapidement</p>
+                <h1>{t('contact_title')}</h1>
+                <h2 className='contact-title'>{t('contact_title_accent')}</h2>
+                <p className='contact-subtitle'>{t('contact_subtitle')}</p>
             </div>
         
             <form className='contact-form' onSubmit={handleSubmit}>
                 <div className='form-row'>
                     <div className='form-group'>
                         {/* CORRECTION 3 : Ajout des labels (indispensable pour les erreurs rouges) */}
-                        <label htmlFor="name">Votre nom</label>
-                        <input id="name" type="text" name="name" placeholder="Ex: Jean Dupont" required />
+                        <label htmlFor="name">{t('contact_nom')}</label>
+                        <input id="name" type="text" name="name" placeholder={t('placeholder_name')}required />
                     </div>
                     <div className='form-group'>
-                        <label htmlFor="email">Votre email</label>
-                        <input id="email" type="email" name="email" placeholder="Ex: jean@mail.com" required />
+                        <label htmlFor="email">{t('contact_email')}</label>
+                        <input id="email" type="email" name="email" placeholder={t('placeholder_email')}required />
                     </div>
                 </div>
                 <div className='form-group'>
-                    <label htmlFor="message">Votre message</label>
-                    <textarea id="message" name="message" placeholder="Votre message..." rows="5" required></textarea>
+                    <label htmlFor="message">{t('contact_message')}</label>
+                    <textarea id="message" name="message" placeholder={t('placeholder_message')} rows="5" required></textarea>
                 </div>
 
                     {/* Affichage des messages selon l'état */}
                     <div className="form-feedback" style={{ marginBottom: '20px', minHeight: '24px' }}>
-                        {status === "SENDING" && <p style={{ color: '#3498db' }}>Envoi en cours... 🚀</p>}
-                        {status === "SUCCESS" && <p style={{ color: '#2ecc71' }}>✅ Message envoyé ! Je vous répondrai vite.</p>}
-                        {status === "ERROR" && <p style={{ color: '#e74c3c' }}>❌ Erreur. Vérifiez vos spams (activation requise au 1er envoi).</p>}
+                        {status === "SENDING" && <p style={{ color: '#3498db' }}>{t('contact_status_sending')}🚀</p>}
+                        {status === "SUCCESS" && <p style={{ color: '#2ecc71' }}>✅ {t('contact_status_success')}</p>}
+                        {status === "ERROR" && <p style={{ color: '#e74c3c' }}>❌ {t('contact_status_error')}</p>}
                     </div>
 
                     <button
@@ -76,7 +78,7 @@ const ContactPage = () => {
                         className="btn-submit" 
                         disabled={status === "SENDING"}
                     >
-                        {status === "SENDING" ? "Envoi..." : "🚀 Envoyer le message"}
+                       {status === "SENDING" ? t('contact_btn_sending') : ` ${t('contact_btn_send')}`}
                     </button>
                 </form>
             </section>

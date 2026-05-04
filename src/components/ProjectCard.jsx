@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ProjectCard = ({ project }) => {
+    const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleModal = (e) => {
@@ -8,7 +10,6 @@ const ProjectCard = ({ project }) => {
         setIsOpen(!isOpen);
     };
 
-    // Gestion de la fermeture (Échap + Verrouillage du scroll)
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === "Escape") setIsOpen(false);
@@ -23,31 +24,26 @@ const ProjectCard = ({ project }) => {
         };
     }, [isOpen]);
 
-    // Fonction de formatage pour séparer titres (bleu) et texte (gris)
-    const formatDescription = (text) => {
+    // FONCTION DE FORMATAGE (POUR LA MODALE UNIQUEMENT)
+    const formatDescription = (textKey) => {
+        const text = t(textKey);
         if (!text) return null;
 
-        // Regex pour capturer les titres clés
-        const regex = /(CONTEXTE|OBJECTIFS|STACK TECHNIQUE|COMPETENCES DEVELOPPEES|RESULTATS|PERSPECTIVES D'AMELIORATION)/g;
+        const titles = t('proj_headers', { returnObjects: true });
+        if (!Array.isArray(titles)) return <p className="section-text">{text}</p>;
+
+        const regex = new RegExp(`(${titles.join('|')})`, 'g');
         const parts = text.split(regex);
         
-        const titles = [
-            "CONTEXTE", "OBJECTIFS", "STACK TECHNIQUE", 
-            "COMPETENCES DEVELOPPEES", "RESULTATS", "PERSPECTIVES D'AMELIORATION"
-        ];
-
         return parts.map((part, index) => {
             const trimmed = part.trim();
             if (!trimmed) return null;
 
             if (titles.includes(trimmed)) {
-                // Rendu du TITRE (sera stylisé en bleu via CSS)
                 return <h4 key={index} className="section-title">{trimmed}</h4>;
             } else {
-                // Nettoyage du texte : minuscules + majuscule initiale
-                const cleanText = trimmed.toLowerCase().replace(/^[\s:]+/, ''); 
+                const cleanText = trimmed.replace(/^[\s:]+/, ''); 
                 const formattedText = cleanText.charAt(0).toUpperCase() + cleanText.slice(1);
-                
                 return <p key={index} className="section-text">{formattedText}</p>;
             }
         });
@@ -55,27 +51,32 @@ const ProjectCard = ({ project }) => {
 
     return (
         <>
+            {/* --- LA CARTE (CE QUI EST VISIBLE TOUT LE TEMPS) --- */}
             <div className="card">
                 <div className="card-header">
                     {project.image && (
-                        <img src={project.image} alt="" aria-hidden="true" className="project-icon" width="50" height="50" />
+                        <img src={project.image} alt="" className="project-icon" width="50" height="50" />
                     )}
                     <h2>{project.title}</h2>
                 </div>
-                <p>{project.description}</p>
+                
+                {/* ICI : Uniquement la description COURTE (p1_desc) */}
+                <p>{t(project.description)}</p>
+
                 <div className="tags">
                     {project.tags.map((tag, index) => <span key={index}>#{tag}</span>)}
                 </div>
-                <button onClick={toggleModal} className="btn-link">Voir le détail</button>
+                
+                <button onClick={toggleModal} className="btn-link">
+                    {t('projects_btn_detail')}
+                </button>
             </div>
 
+            {/* --- LA MODALE (CE QUI N'APPARAÎT QU'AU CLIC) --- */}
             {isOpen && (
                 <div className="modal-overlay" onClick={() => setIsOpen(false)}>
-                    {/* stopPropagation empêche la fermeture quand on clique sur le texte */}
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        <button className="close-btn" onClick={() => setIsOpen(false)} aria-label="Fermer">
-                            &times;
-                        </button>
+                        <button className="close-btn" onClick={() => setIsOpen(false)}>&times;</button>
                         
                         <div className="modal-header">
                             <h2>{project.title}</h2>
@@ -83,15 +84,16 @@ const ProjectCard = ({ project }) => {
                         </div>
 
                         <div className="modal-body">
-                            {formatDescription(project.longDescription || project.description)}
+                            {/* ICI : La description LONGUE (p1_long) formatée avec les titres bleus */}
+                            {formatDescription(project.longDescription)}
                             
                             <div className="modal-actions">
                                 {project.link && project.link.startsWith('http') ? (
                                     <a href={project.link} target="_blank" rel="noreferrer" className="btn-github">
-                                        Voir le code sur GitHub
+                                        {t('projects_btn_github')}
                                     </a>
                                 ) : (
-                                    <p className="no-link">Code source privé ou bientôt disponible</p>
+                                    <p className="no-link">{t('projects_no_link')}</p>
                                 )}
                             </div> 
                         </div>

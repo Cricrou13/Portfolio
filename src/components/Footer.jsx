@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Footer =() => {
+    const { t } = useTranslation();
     return (
       <footer className='footer'>
          <div className='footer-content'>
@@ -21,7 +23,7 @@ const Footer =() => {
           </div>
 
           <div className='footer-copy'>
-             <p>© 2026 - Christophe Delclos - Tous droits réservés</p>
+             <p>{t('footer_droits')}</p>
           </div>
         </div>
       </footer>

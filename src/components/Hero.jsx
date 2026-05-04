@@ -1,8 +1,14 @@
 import React from 'react';
+// 1. IMPORT MANQUANT
+import { useTranslation } from 'react-i18next'; 
 import { projectData } from "../data/projectData";
 import { techIcons } from "../data/techIcons";
 
 const Hero = () => {
+  // 2. INITIALISATION DU HOOK
+  const { t } = useTranslation();
+
+  // Logique pour extraire les technos des projets
   const techStack = [
     ...new Set(projectData.flatMap(project => project.tags))
   ];
@@ -11,7 +17,8 @@ const Hero = () => {
     <header id="accueil" className="hero container">
       <div className="hero-left">
         <div className="badge-tech">
-          <span className="icon">💎</span> • Développeur Full-Stack •
+          {/* 3. TRADUCTION DU SOUS-TITRE */}
+          <span className="icon">💎</span> • {t('hero_subtitle')} •
         </div>
         
         <h1 className='section-title'>
@@ -27,16 +34,14 @@ const Hero = () => {
           ))}
         </div>
         
-        <p className="description">
-          Ancien électricien reconverti dans le numérique. <br />
-          Je combine 20 ans de rigueur technique à la création 
-          d'expériences digitales modernes et performantes.
+{/*           TRADUCTION DE LA DESCRIPTION
+ */}        <p className="description">
+          {t('hero_description')}
         </p>
       </div>
 
-      <div className="hero-right"> {/* Changé hero-image par hero-right pour la clarté */}
+      <div className="hero-right">
         <div className="image-wrapper">
-          {/* 2. On insère la photo ici */}
           <img src="/assets/Photo.jpg" alt="Christophe Delclos" className="profile-img" />
         </div>
       </div>
