@@ -56,6 +56,9 @@
   "p5_desc": "Optimisation SEO et performances Lighthouse du site d'une photographe.",
   "p5_long": "CONTEXTE: Ce projet consistait à optimiser le site internet existant d'une photographe professionnelle pour améliorer sa visibilité et sa rapidité. OBJECTIFS: La mission ciblait la réduction du temps de chargement des images et le débogage de composants JavaScript défaillants. STACK TECHNIQUE: L'optimisation a été réalisée via l'analyse de Lighthouse, l'utilisation de balises Schema.org et la compression de ressources média. COMPETENCES DEVELOPPEES: J'ai appris à diagnostiquer des problèmes de performance critiques et à mettre en œuvre des techniques de SEO local et technique. RESULTATS: Les interventions ont permis de doubler le score de performance sur mobile et d'améliorer significativement le référencement naturel. PERSPECTIVES D'AMELIORATION: La mise en place d'un système de galerie d'images plus moderne pourrait encore accroître l'engagement visuel des clients.",
 
+  "p6_desc":"Plateforme de réservation en ligne pour entrepreneurs, actuellement en cours de développement",
+  "p6_long": "Infintime est mon projet fil rouge de formation développeur web. Il s'agit d'une plateforme de réservation permettant aux entrepreneurs de gérer leur agenda, leurs prestations et leur clientèle, tout en offrant à leurs clients un espace simple pour prendre rendez-vous. Projet en cours de construction (React, Node.js, SCSS).",
+
   "cv_title": "Mon",
   "cv_title_accent": "Curriculum Vitae",
   "charge_cv": "Télécharger le PDF",

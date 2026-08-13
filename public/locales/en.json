@@ -49,6 +49,9 @@
   "p5_desc": "SEO optimization and performance debugging for a professional photographer.",
   "p5_long": "CONTEXT: This project involved optimizing a professional photographer's existing website to improve its visibility and speed. OBJECTIVES: The mission targeted reducing image load times and debugging faulty JavaScript components. TECHNICAL STACK: Optimization was achieved through Lighthouse analysis, the use of Schema.org tags, and media resource compression. DEVELOPED SKILLS: I learned to diagnose critical performance issues and implement local and technical SEO techniques. RESULTS: The interventions doubled the performance score on mobile and significantly improved organic search ranking. IMPROVEMENT PERSPECTIVES: Implementing a more modern image gallery system could further increase visual engagement for clients.",
 
+  "p6_desc": "Online booking platform for entrepreneurs, currently under development",
+  "p6_long": "Infintime is my capstone project from my web development training. It's a booking platform that lets entrepreneurs manage their schedule, services and clients, while offering their clients a simple way to book appointments. Project in progress (React, Node.js, SCSS).",
+
     "cv_title": "My",
     "cv_title_accent": "Resume",
     "charge_cv": "Download the PDF",

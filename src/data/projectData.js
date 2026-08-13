@@ -43,5 +43,15 @@ export const projectData = [
         tags: ["HTML", "CSS", "SEO"],
         link: "https://github.com/Cricrou13/Nina-Carducci.git",
         image: "/assets/nina.webp"
+    },
+
+     {
+        id: 6,
+        title: "InfinTime",
+        description :  "p6_desc",
+        longDescription: "p6_long",
+        tags: ["HTML", "CSS", "Vite", "React", "Node.js", "SEO"],
+        link: "https://github.com/Cricrou13/Projet-fil-rouge",
+        image: "/assets/Logo.png"
     }
 ];
